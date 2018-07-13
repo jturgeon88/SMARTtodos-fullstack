@@ -1,5 +1,41 @@
 {
-  "name": "SMARTtodos-fullstack",
-  "private": true,
-  "dependencies": {}
+  "name": "SMARTtodos",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
+    "webpack": "webpack --mode=development --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "lodash": "^4.17.10",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "webpack": "^4.16.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.0.8"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jturgeon88/SMARTtodos-fullstack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jturgeon88/SMARTtodos-fullstack/issues"
+  },
+  "homepage": "https://github.com/jturgeon88/SMARTtodos-fullstack#readme"
 }
