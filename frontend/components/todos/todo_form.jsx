@@ -1,6 +1,7 @@
 // FORM TO ALLOW USERS TO CREATE NEW TODOS
 import React from 'react';
 import { uniqueId } from '../../util/id_generator'
+import ErrorList from './error_list';
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -24,20 +25,15 @@ class TodoForm extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     const todo = Object.assign({}, this.state, { id: uniqueId(), title: this.state.title, body: this.state.body });
-    this.props.receiveTodo(todo);
-    // after we receiveTodo, we need to reset the form to blank:
-    this.setState({
-      title: '',
-      measure: '',
-      deadline: '',
-      body: ''
-    })
-
+    this.props.createTodo(todo).then(
+      () => this.setState({      title: '', measure: '', deadline: '', body: ''})
+    );
   }
 
   render () {
     return (
       <form className='todo-form' onSubmit={this.handleSubmit}>
+        <ErrorList errors={this.props.errors} />
         <label><p className="smart-label">Specific Todo:</p>
           <input
             className="input"

@@ -26,15 +26,15 @@ class TodoListItem extends React.Component {
     );
 
     // Now that we have a toggledTodo, receive that todo:
-    this.props.receiveTodo(toggledTodo);
+    this.props.updateTodo(toggledTodo);
   }
 
   render () {
-    const { todo, receiveTodo } = this.props;
+    const { todo, receiveTodo, deleteTodo } = this.props;
     const { title, done } = todo;
     let detail;
     if (this.state.detail) {
-      detail = <TodoDetailViewContainer todo={todo} />
+      detail = <TodoDetailViewContainer todo={todo} deleteTodo={deleteTodo} />
     }
     return (
       <li className="todo-list-item">

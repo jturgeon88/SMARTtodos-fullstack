@@ -6,7 +6,7 @@ class TodoDetailView extends React.Component {
 
   render () {
     // todo is passed down from TodoListItem, while removeTodo comes from the container
-    const { todo, removeTodo } = this.props;
+    const { todo, deleteTodo } = this.props;
 
     return (
       <div>
@@ -16,7 +16,7 @@ class TodoDetailView extends React.Component {
           <p className="todo-body">{todo.deadline}</p>
         </ul>
         <StepListContainer todo_id={todo.id} />
-        <button className="delete-button" onClick={ () => removeTodo(todo) }>Delete Todo</button>
+        <button className="delete-button" onClick={ () => deleteTodo(todo) }>Delete Todo</button>
       </div>
     );
   }
