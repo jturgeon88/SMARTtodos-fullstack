@@ -7,7 +7,8 @@ class StepForm extends React.Component {
     this.state = {
       title: '',
       body: '',
-      done: false
+      done: false,
+      todo_id: this.props.todo_id
     };
 
     this.update = this.update.bind(this);
@@ -18,15 +19,15 @@ class StepForm extends React.Component {
     return e => this.setState({[property]: e.target.value});
   }
 
-  handleSubmit (e) {
+  handleSubmit(e) {
     e.preventDefault();
-    const step = Object.assign({}, this.state, { id: uniqueId(), title: this.state.title, todo_id: this.props.todo_id });
-    this.props.receiveStep(step);
-    // after we receiveStep, we need to reset the form to blank:
-    this.setState({
-      title: '',
-      body: ''
-    })
+    const step = Object.assign({}, this.state);
+    this.props.createStep(this.props.todo_id, step).then(
+      this.setState({
+        title: "",
+        body: ""
+      }) // reset form
+    );
   }
 
   render () {
