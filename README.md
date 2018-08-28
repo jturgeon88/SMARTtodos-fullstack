@@ -1,24 +1,9 @@
-# README
+# SMARTtodos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[LIVE FRONTEND DEMO](https://jturgeon88.github.io/SMARTtodos "SMARTtodos App Demo")
 
-Things you may want to cover:
+A straight forward productivity app that guides you towards creating Specific, Measurable, Actionable, Realistic, Time-based goals.
 
-* Ruby version
+Users can toggle the status of each todo or delete it. They can also create multiple "Progress Goals" (or sub-steps) for each todo. Progress Goals can also be toggled or deleted.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Frontend app created with ReactJS and a Redux architecture, backend created with Ruby on Rails.
